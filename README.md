@@ -1,30 +1,37 @@
-# CSR Helper
-
-[![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/ss-o/csrhelp/main/LICENSE)
+# CSR-Helper
 
 ***CSR Helper*** is a simple application based on [AngularJS Material](http://material.angularjs.org/) and [PKIjs](https://pkijs.org) that aims to make it easy for users to generate certificate requests (PKCS#10s) for requesting SSL certificates.
 
-You can find this project hosted here: https://csrhelp.pages.dev
+---
 
-## Getting Started
+[![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/ss-o/csrhelp/main/LICENSE)
 
-To get you started you can simply clone `main` branch from the
-[CSR Help](https://github.com/ss-o/csrhelp.git) repository and install the dependencies:
 
-Clone the csrhelp repository using git:
+### Docker
+
+```
+docker run -d -p 5000:5000 ghcr.io/ss-o/csrhelp:main
+```
+Visit http://localhost:5000
+
+### From source
+
+> Recommended node version 14.x
+
+- npm
+- git
 
 ```bash
 git clone https://github.com/ss-o/csrhelp.git
-cd csrhelp
+cd csrhelp && npm install
 ```
-
-#### Install Dependencies
-
-We have preconfigured `npm` to automatically run `bower` so we can simply do:
+### Start locally
 
 ```bash
-npm install
+npm run start
 ```
+
+Visit http://localhost:5000
 
 ## Directory Layout
 
@@ -35,8 +42,6 @@ npm install
   users/                --> package for user features
   index.html            --> app layout file (the main html template file of the app)
   karma.conf.js         --> config file for running unit tests with Karma
-  e2e-tests/            --> end-to-end tests
-  protractor-conf.js    --> Protractor config file
   scenarios.js          --> end-to-end scenarios to be run by Protractor
 ```
 
@@ -69,4 +74,5 @@ It supports both ECC and RSA certificate requests and will use use [WebCrypto](h
 - **[git](http://git-scm.com/)**
 - **[bower](http://bower.io)**
 - **[npm](https://www.npmjs.org/)**
+- **[docker](https://www.docker.com/)**
 
