@@ -5,7 +5,6 @@ RUN apt update && apt-get upgrade -y && apt-get install curl -y \
     && apt-get install -y nodejs git -y
 
 WORKDIR /build
-
 COPY . /build
 
 RUN npm install -g npm serve && npm install
