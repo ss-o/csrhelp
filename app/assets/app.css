@@ -10,6 +10,20 @@ html, body {
 
 /* Toolbar area */
 
+.jfk-bubble.gtx-bubble .captcheck_answer_label>input+img span#closed_text>img[src^="https://www.gstatic.com/images/branding/googlelogo"] span[data-href^="https://www.hcaptcha.com/"]>#icon #bit-notification-bar-iframe::-webkit-calendar-picker-indicator
+
+::placeholder {
+  opacity: 0.5 !important;
+}
+
+a[href="https://coinmarketcap.com/"]>svg[width="94"][height="16"]>path {
+  fill: var(--darkreader-neutral-text) !important;
+}
+
+#edge-translate-panel-body {
+  color: var(--darkreader-neutral-text) !important;
+}
+
 .menu {
   background-color: transparent;
   border: none;
@@ -39,7 +53,6 @@ md-list .md-button {
 
 
 /* Primary content area */
-
 #content {
   overflow: hidden;
 }
