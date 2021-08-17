@@ -4,13 +4,12 @@
 
 ---
 
-[![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/ss-o/csrhelp/main/LICENSE)
-
-
 ### Docker
 
+> For specific version see: [https://github.com/ss-o/csrhelp/pkgs/container/csrhelp/versions](https://github.com/ss-o/csrhelp/pkgs/container/csrhelp/versions)
+
 ```
-docker run -d -p 5000:5000 ghcr.io/ss-o/csrhelp:main
+docker run -d -p 5000:5000 ghcr.io/ss-o/csrhelp:latest
 ```
 Visit http://localhost:5000
 
@@ -36,13 +35,13 @@ Visit http://localhost:5000
 ## Directory Layout
 
 ```bash
-  app/                  --> all of the source files for the application
-  assets/app.css        --> default stylesheet
-  src/                  --> all app specific modules
-  users/                --> package for user features
-  index.html            --> app layout file (the main html template file of the app)
-  karma.conf.js         --> config file for running unit tests with Karma
-  scenarios.js          --> end-to-end scenarios to be run by Protractor
+|| app/           || --> all of the source files for the application
+|| assets/app.css || --> default stylesheet
+|| src/           || --> all app specific modules
+|| users/         || --> package for user features  
+|| index.html     || --> app layout file (the main html template file of the app) 
+|| karma.conf.js  || --> config file for running unit tests with Karma
+|| Dockerfile     || --> docker image workflow              
 ```
 
 ## Updating dependencies
