@@ -15,8 +15,8 @@
     "shelljs": "0.2.6"
   },
   "scripts": {
-    "postinstall": "bower update",
-    "prestart": "npm update",
+    "postinstall": "npm update && bower update",
+    "build": "npm install",
     "start": "serve app"
   },
   "dependencies": {
