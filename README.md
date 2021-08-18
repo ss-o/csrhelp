@@ -22,13 +22,14 @@ Visit http://localhost:5000
 
 ```bash
 git clone https://github.com/ss-o/csrhelp.git
-cd csrhelp && npm install
-```
-### Start locally
+cd csrhelp
+npm install 
+npm run postinstall
 
-```bash
-npm run start
+# Run locally
+http-server app
 ```
+
 
 Visit http://localhost:5000
 
