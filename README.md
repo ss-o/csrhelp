@@ -11,6 +11,7 @@
 ```
 docker run -d -p 5000:5000 ghcr.io/ss-o/csrhelp:latest
 ```
+
 Visit http://localhost:5000
 
 ### From source
@@ -27,22 +28,21 @@ npm install
 npm run postinstall
 
 # Run locally
-http-server app
+npm start
 ```
-
 
 Visit http://localhost:5000
 
 ## Directory Layout
 
 ```bash
+|| Dockerfile     || --> docker image workflow
 || app/           || --> all of the source files for the application
 || assets/app.css || --> default stylesheet
 || src/           || --> all app specific modules
 || users/         || --> package for user features  
 || index.html     || --> app layout file (the main html template file of the app) 
 || karma.conf.js  || --> config file for running unit tests with Karma
-|| Dockerfile     || --> docker image workflow              
 ```
 
 ## Updating dependencies

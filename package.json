@@ -16,6 +16,6 @@
   },
   "scripts": {
     "postinstall": "npm update && bower update",
-    "start": "node_modules/http-server/bin/http-server app"
+    "start": "node_modules/http-server/bin/http-server app -g -b -s --port 5000"
   }
 }
