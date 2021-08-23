@@ -12,6 +12,6 @@ COPY . /build
 
 RUN npm install && npm run postinstall
 
-HEALTHCHECK --interval=35s --timeout=4s CMD curl -f https://localhost:5000/ || exit 1
+HEALTHCHECK --interval=35s --timeout=4s CMD curl -f http://localhost:5000/ || exit 1
 EXPOSE 5000
 ENTRYPOINT ["npm", "start"]
