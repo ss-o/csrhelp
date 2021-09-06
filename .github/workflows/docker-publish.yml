@@ -1,13 +1,13 @@
 name: Docker CI
 
 on:
-  schedule:
-    - cron: '18 3 * * *'
-  push:
-    branches: [ main ]
-    tags: [ 'v*.*.*' ]
-  pull_request:
-    branches: [ main ]
+#  schedule:
+#    - cron: '18 3 * * *'
+#  push:
+#    branches: [ main ]
+#    tags: [ 'v*.*.*' ]
+#  pull_request:
+#    branches: [ main ]
   release:
     types: [published]
 
