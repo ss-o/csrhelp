@@ -11,7 +11,7 @@
     "karma": "6.3.9",
     "karma-junit-reporter": "2.0.1",
     "protractor": "7.0.0",
-    "selenium-webdriver": "3.6.0",
+    "selenium-webdriver": "4.1.0",
     "shelljs": "0.2.6"
   },
   "scripts": {
