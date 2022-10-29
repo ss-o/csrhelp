@@ -1,4 +1,4 @@
-FROM ubuntu:21.10
+FROM ubuntu:jammy
 
 ARG DEBIAN_FRONTEND=noninteractive
 
