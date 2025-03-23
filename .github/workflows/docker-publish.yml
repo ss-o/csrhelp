@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Cache
-        uses: actions/cache@v3.3.1
+        uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3.3.3
         with:
           path: .
           key: npm-${{ hashFiles('package-lock.json') }}
