@@ -1,11 +1,23 @@
-FROM ubuntu:24.04@sha256:72297848456d5d37d1262630108ab308d3e9ec7ed1c3286a32fe09856619a782
+FROM alpine:3.16
 
-ARG DEBIAN_FRONTEND=noninteractive
-
-RUN apt update && apt-get upgrade -y && apt-get install curl -y \
+RUn apk --no-cache update \
+    && apk --no-cache upgrade \
+    && apk add --no-cache curl nodejs npm git build-base ca-certificates \
+    && apk add --no-cache --virtual .build-deps \
     && curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
-    && apt-get install -y nodejs git build-essential ca-certificates -y \
-    && apt autoremove -y && apt clean
+    && apk del .build-deps \
+    && rm -rf /var/cache/apk/*
+
+
+ENV USE
+
+# Add a non-root user
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+USER appuser
+
+# Define environment variables
+ENV NODE_ENV=production
+ENV PORT=5000
 
 WORKDIR /build
 COPY . /build
@@ -14,6 +26,6 @@ RUN npm install -g npm \
     && npm install \
     && npm run postinstall
 
-HEALTHCHECK --interval=15s --timeout=4s CMD curl -f http://localhost:5000/ || exit 1
-EXPOSE 5000
+HEALTHCHECK --interval=15s --timeout=4s CMD curl -f http://localhost:$PORT/ || exit 1
+EXPOSE $PORT
 ENTRYPOINT ["npm", "start"]
