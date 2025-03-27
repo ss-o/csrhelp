@@ -655,13 +655,13 @@
 
     function getFilename(str) {
       if (!str) return "";
-      var temp1 = str.replace("/", "_");
-      var temp2 = temp1.replace("\\", "_");
-      var temp3 = temp2.replace(":", "_");
-      var temp4 = temp3.replace("?", "_");
-      var temp5 = temp4.replace("<", "_");
-      var temp6 = temp5.replace(">", "_");
-      var temp7 = temp6.replace("|", "_").replace("*", "star");
+      var temp1 = str.replace(/\//g, "_");
+      var temp2 = temp1.replace(/\\/g, "_");
+      var temp3 = temp2.replace(/:/g, "_");
+      var temp4 = temp3.replace(/\?/g, "_");
+      var temp5 = temp4.replace(/</g, "_");
+      var temp6 = temp5.replace(/>/g, "_");
+      var temp7 = temp6.replace(/\|/g, "_").replace(/\*/g, "star");
 
       return temp7;
     }
