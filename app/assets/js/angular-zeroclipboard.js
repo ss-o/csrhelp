@@ -79,7 +79,7 @@ angular
               scope.$apply(function () {
                 scope.onCopied({ $event: e });
               });
-            }),
+            })
           );
 
           scope.client.on("error", function (e) {
