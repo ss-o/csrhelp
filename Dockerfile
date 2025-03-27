@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM alpine:latest
 
 RUN apk --no-cache update \
     && apk --no-cache upgrade \
@@ -9,7 +9,6 @@ RUN apk --no-cache update \
 
 # Define environment variables
 ENV NODE_ENV=production
-ENV PORT=5000
 ENV USER=appuser
 ENV GROUP=appgroup
 
@@ -23,6 +22,6 @@ COPY . /build
 RUN pnpm install \
     && pnpm run postinstall
 
-HEALTHCHECK --interval=15s --timeout=4s CMD curl -f http://localhost:$PORT/ || exit 1
-EXPOSE $PORT
+HEALTHCHECK --interval=15s --timeout=4s CMD curl -f http://localhost:5000/ || exit 1
+EXPOSE 5000
 ENTRYPOINT ["pnpm", "start"]
