@@ -1,8 +1,6 @@
-(function(){
-  'use strict';
+(function () {
+  "use strict";
 
   // Prepare the 'users' module for subsequent registration of controllers and delegates
-  angular.module('csrhelps', [ 'ngMaterial' ]);
-
-
+  angular.module("csrhelps", ["ngMaterial"]);
 })();
