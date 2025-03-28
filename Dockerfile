@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.21.3
 
 RUN apk --no-cache update \
     && apk --no-cache upgrade \
@@ -19,8 +19,7 @@ USER appuser
 WORKDIR /build
 COPY . /build
 
-RUN pnpm install \
-    && pnpm run postinstall
+RUN pnpm install
 
 HEALTHCHECK --interval=15s --timeout=4s CMD curl -f http://localhost:5000/ || exit 1
 EXPOSE 5000

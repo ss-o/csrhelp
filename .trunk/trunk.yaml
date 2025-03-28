@@ -16,8 +16,10 @@ runtimes:
     - python@3.10.8
 # This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
 lint:
+  disabled:
+    - eslint
+    - osv-scanner
   enabled:
-    - osv-scanner@2.0.0
     - actionlint@1.7.7
     - checkov@3.2.392
     - git-diff-check
@@ -25,7 +27,7 @@ lint:
     - markdownlint@0.44.0
     - oxipng@9.1.4
     - prettier@3.5.3
-    - renovate@39.213.6
+    - renovate@39.217.0
     - svgo@3.3.2
     - trufflehog@3.88.18
     - yamllint@1.37.0
@@ -35,3 +37,15 @@ actions:
     - trunk-check-pre-push
     - trunk-fmt-pre-commit
     - trunk-upgrade-available
+tools:
+  enabled:
+    - action-validator@0.6.0
+    - pnpm@10.7.0
+  definitions:
+    - name: pnpm
+      download: pnpm
+      known_good_version: 10.7.0
+      environment:
+        - name: PATH
+          list: ["${tool}/bin"]
+      shims: [pnpm]

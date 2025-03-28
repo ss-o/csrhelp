@@ -54,8 +54,9 @@
 	<md-toolbar layout="row" class="md-whiteframe-z1">
 		<h1 align="center"><span class="md-display-2">Certificates Made Easy</span></h1>
 	</md-toolbar>
-	<div layout="column" role="main" class="md-whiteframe-z2" ng-app="csrhelpApp" ng-controller="CsrhelpController"
-		layout-margin>
+		<div layout="column" role="main" class="md-whiteframe-z2" ng-app="csrhelpApp" ng-controller="CsrhelpController">
+			<div id="result" flex ng-if="showResult">
+		</div>
 		<div id="request-form" flex>
 			<md-toolbar class="md-theme-light">
 				<h2 class="md-toolbar-tools">
@@ -277,7 +278,7 @@
 							<div class="a_details">
 								<p>Generally speaking the larger the private key the stronger it is. Unfortunately the
 									larger it is the slower the cryptographic operations with that key will be. Though
-									techniques for cryptanalysis are always improving, at this time, the <a href="http://keylength.com">general consensus</a>
+									techniques for cryptanalysis are always improving, at this time, the <a href="http://keylength.com" target="_blank">general consensus</a>
 									 is that RSA 2048-bit and ECC 256-bit keys are sufficiently strong for most use cases.</p>
 							</div>
 						</div>
@@ -360,9 +361,9 @@
 							<div class="a_details">
 								<p>Absolutely, there are a number of HTTP headers a server can send that can help the
 									browser enforce appropriate security controls. Check out the <a
-										href="https://securityheaders.io/">Security Headers</a> websitte for recomendations.</p>
+										href="https://securityheaders.io/">Security Headers</a> website for recommendations.</p>
 									<br /><br />
-								<p>We recomend you take a look at <a href="https://report-uri.io/">Report URI</a>, it
+								<p>We recommend you take a look at <a href="https://report-uri.io/">Report URI</a>, it
 									can help you keep an eye on your deployment of Content Security Policy (CSP) and
 									Public Key Pinning (HPKP).</p>
 							</div>
@@ -384,7 +385,7 @@
 							<div class="a_details">
 								<p>There are several organizations that offer free Domain Validated (DV) SSL
 									certificates. One that we are involved in is <a
-										href="https://letsencrypt.org/">Let’s Encrypt</a>.</p>
+										href="https://letsencrypt.org/">Let's Encrypt</a>.</p>
 								<br />
 								<br />
 								<p>For Extended Validation (EV) certificates, the best experience in our opinion is
@@ -443,7 +444,7 @@
 									generated here. You can also clone this repository with this command: </p>
 								<br />
 								<br />
-								<p> git clone https://github.com/ss-o/csrhelp.git</p>
+								<pre><code>git clone https://github.com/ss-o/csrhelp.git</code></pre>
 								<br />
 								<br />
 								<p>Which will let you run this site locally and not be exposed to this risk.</p>

@@ -13,5 +13,7 @@
   },
   "devDependencies": {
     "angular-material": "https://github.com/angular/bower-material.git#master"
-  }
+  },
+  "main": "",
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"]
 }
